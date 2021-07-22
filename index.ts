@@ -126,7 +126,7 @@ export async function partyScreen(data: Party<PokemonSet>): Promise<Buffer> {
 		ctx.fillText('Lv. ' + level, drawdata[i].lvl.x, drawdata[i].lvl.y);
 		let icon = await loadImage(`https://github.com/itsjavi/pokemon-assets/raw/master/assets/img/pokemon/${data[i].species.toLowerCase()}.png`);
 		ctx.drawImage(icon, drawdata[i].icon.x, drawdata[i].icon.y, icon.width*1.5, icon.height*1.5);
-		gender === 'M' ? ctx.drawImage(male, drawdata[i].gender.x, drawdata[i].gender.y) : ctx.drawImage(female, drawdata[i].gender.x, drawdata[i].gender.y);
+		if (gender) gender === 'M' ? ctx.drawImage(male, drawdata[i].gender.x, drawdata[i].gender.y) : ctx.drawImage(female, drawdata[i].gender.x, drawdata[i].gender.y);
 
 		const base = Gen(8).species.get(data[i].species)?.baseStats ?? Gen(7).species.get(data[i].species)?.baseStats;
 		const nature = Gen(8).natures.get(data[i].nature);
