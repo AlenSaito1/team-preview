@@ -39,7 +39,8 @@
     "@pkmn/sets": "^2.0.0",
     "@types/node": "^15.9.0",
     "@types/skia-canvas": "^0.9.0",
-    "skia-canvas": "^0.9.21",
+    "canvas": "^2.8.0",
+    "gif-frames": "github:alensaito1/gif-frames",
     "tslib": "^2.2.0",
     "typescript": "^4.3.2"
   }
