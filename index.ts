@@ -136,7 +136,7 @@ export async function partyScreen(data: Party<PokemonSet>): Promise<Buffer> {
 
 	const filename = await new Promise<string>((resolve) => gifFrames({ url, frames: 'all', outputType: 'png' }).then((data) => {
 		const filename = `${tmpdir()}/${Math.random().toString(36)}.png`
-		const stream = data[0].getImage().pipe(createWriteStream('firstframe.jpg'));
+		const stream = data[0].getImage().pipe(createWriteStream(filename));
 		stream.on('finish', () => resolve(filename))
 	  }))
 	const sprite = await loadImage(filename);
