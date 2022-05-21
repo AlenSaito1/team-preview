@@ -1,6 +1,6 @@
 import type { PokemonSet } from '@pkmn/sets';
 import type { GenerationNum, Move } from '@pkmn/data';
-import { Sprites } from '@pkmn/img';
+import { Sprites. Icons } from '@pkmn/img';
 import { Dex } from '@pkmn/dex';
 import { Generations } from '@pkmn/data';
 import path from 'path';
@@ -122,7 +122,7 @@ export async function partyScreen(data: Party<PokemonSet>): Promise<Buffer> {
 		ctx.fillStyle = drawdata[i].color;
 		ctx.fillText(name !== '' ? name : species, drawdata[i].species.x, drawdata[i].species.y);
 		ctx.fillText('Lv. ' + level, drawdata[i].lvl.x, drawdata[i].lvl.y);
-		let icon = await loadImage(`https://github.com/itsjavi/pokemon-assets/raw/master/assets/img/pokemon/${data[i].species.toLowerCase()}.png`);
+		let icon = await loadImage(Icons.getPokemon(data[i].species).url);
 		ctx.drawImage(icon, drawdata[i].icon.x, drawdata[i].icon.y, icon.width*1.5, icon.height*1.5);
 		if (gender) gender === 'M' ? ctx.drawImage(male, drawdata[i].gender.x, drawdata[i].gender.y) : ctx.drawImage(female, drawdata[i].gender.x, drawdata[i].gender.y);
 
