@@ -1,6 +1,6 @@
 import type { PokemonSet } from '@pkmn/sets';
 import type { GenerationNum, Move } from '@pkmn/data';
-import { Sprites. Icons } from '@pkmn/img';
+import { Sprites, Icons } from '@pkmn/img';
 import { Dex } from '@pkmn/dex';
 import { Generations } from '@pkmn/data';
 import path from 'path';
